@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EmbedDiff (ESM-2) Summary Report</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f4f6f8;
+            color: #333;
+            margin: 0;
+            padding: 2em;
+        }
+        h1 {
+            font-size: 2.2em;
+            color: #1e3a8a;
+            margin-bottom: 0.2em;
+        }
+        h2 {
+            font-size: 1.5em;
+            margin-top: 2em;
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 0.3em;
+        }
+        .grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+        }
+        .card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            padding: 1em;
+            flex: 1 1 45%;
+            max-width: 45%;
+        }
+        .card img {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+            border: 1px solid #ddd;
+            display: block;
+        }
+        .figure-title {
+            font-weight: 600;
+            margin-top: 0.5em;
+            margin-bottom: 1em;
+            font-size: 1em;
+            color: #111827;
+        }
+        a.download {
+            display: inline-block;
+            margin: 10px 10px 0 0;
+            font-weight: bold;
+            color: #2563eb;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+        }
+        a.download:hover {
+            border-color: #2563eb;
+        }
+    </style>
+</head>
+<body>
+    <h1>🧬 EmbedDiff (ESM-2) Summary Report</h1>
+    <p><strong>Date Generated:</strong> 2025-08-29 12:04:02</p>
+
+    <h2>🔍 Embedding Analysis & Classification</h2>
+    <p>This section shows the analysis of ESM-2 embeddings including domain clustering and logistic regression classification results.</p>
+    <div class="grid">
+
+        <div class="card">
+            <div class="figure-title">Figure 1: t-SNE by Domain (ESM-2)</div>
+            <img src="figures/fig_tsne_by_domain_esm2.png" alt="Figure 1: t-SNE by Domain (ESM-2)">
+        </div>
+
+        <div class="card">
+            <div class="figure-title">Figure 2: Logistic Regression Per-Class Recall (ESM-2)</div>
+            <img src="figures/logreg_per_class_recall_esm2.png" alt="Figure 2: Logistic Regression Per-Class Recall (ESM-2)">
+        </div>
+
+    </div>
+    
+    <h2>🚀 Diffusion & Generation Results</h2>
+    <p>This section shows the results of the EmbedDiff latent diffusion model training and synthetic sequence generation.</p>
+    <div class="grid">
+
+        <div class="card">
+            <div class="figure-title">Figure 3: Logistic Regression Confusion Matrix (ESM-2)</div>
+            <img src="figures/logreg_confusion_matrix_esm2.png" alt="Figure 3: Logistic Regression Confusion Matrix (ESM-2)">
+        </div>
+
+        <div class="card">
+            <div class="figure-title">Figure 4: Diffusion Training Loss (ESM-2)</div>
+            <img src="figures/fig2b_loss_esm2.png" alt="Figure 4: Diffusion Training Loss (ESM-2)">
+        </div>
+
+        <div class="card">
+            <div class="figure-title">Figure 5: Generated Embeddings t-SNE (ESM-2)</div>
+            <img src="figures/fig3a_generated_tsne_esm2.png" alt="Figure 5: Generated Embeddings t-SNE (ESM-2)">
+        </div>
+
+        <div class="card">
+            <div class="figure-title">Figure 6: Transformer Decoder Loss (ESM-2)</div>
+            <img src="figures/fig5a_decoder_loss_esm2.png" alt="Figure 6: Transformer Decoder Loss (ESM-2)">
+        </div>
+
+        <div class="card">
+            <div class="figure-title">Figure 7: Real-Real Cosine Similarity (ESM-2)</div>
+            <img src="figures/fig5a_real_real_cosine_esm2.png" alt="Figure 7: Real-Real Cosine Similarity (ESM-2)">
+        </div>
+
+        <div class="card">
+            <div class="figure-title">Figure 8: Generated-Generated Cosine Similarity (ESM-2)</div>
+            <img src="figures/fig5b_gen_gen_cosine_esm2.png" alt="Figure 8: Generated-Generated Cosine Similarity (ESM-2)">
+        </div>
+
+        <div class="card">
+            <div class="figure-title">Figure 9: Real-Generated Cosine Similarity (ESM-2)</div>
+            <img src="figures/fig5c_real_gen_cosine_esm2.png" alt="Figure 9: Real-Generated Cosine Similarity (ESM-2)">
+        </div>
+
+        <div class="card">
+            <div class="figure-title">Figure 10: Identity Histogram (ESM-2)</div>
+            <img src="figures/fig5b_identity_histogram_esm2.png" alt="Figure 10: Identity Histogram (ESM-2)">
+        </div>
+
+        <div class="card">
+            <div class="figure-title">Figure 11: Entropy vs Identity Scatter (ESM-2)</div>
+            <img src="figures/fig5c_entropy_scatter_esm2.png" alt="Figure 11: Entropy vs Identity Scatter (ESM-2)">
+        </div>
+
+        <div class="card">
+            <div class="figure-title">Figure 12: All Histograms (ESM-2)</div>
+            <img src="figures/fig5d_all_histograms_esm2.png" alt="Figure 12: All Histograms (ESM-2)">
+        </div>
+
+        <div class="card">
+            <div class="figure-title">Figure 13: t-SNE Domain Overlay (ESM-2)</div>
+            <img src="figures/fig5f_tsne_domain_overlay_esm2.png" alt="Figure 13: t-SNE Domain Overlay (ESM-2)">
+        </div>
+
+    </div>
+
+    <h2>📥 Downloads</h2>
+<a class='download' href='data/blast_results/blast_summary_local_esm2.csv' download>Download BLAST Summary CSV (ESM-2)</a>
+<a class='download' href='figures/fig5b_identity_scores_esm2.csv' download>Download Identity Scores CSV (ESM-2)</a>
+<a class='download' href='data/decoded_embeddiff_esm2.fasta' download>Download Final FASTA (ESM-2)</a>
+<a class='download' href='figures/logreg_classification_results_esm2.csv' download>Download Logistic Regression Classification Results (ESM-2)</a>
+
+</body>
+</html>
