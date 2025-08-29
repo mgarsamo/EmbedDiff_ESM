@@ -297,6 +297,21 @@ Generated sequences can be assessed for structural plausibility using:
 
 ---
 
+## 📊 Performance Metrics
+
+| Metric | Value | Description |
+|--------|-------|-------------|
+| **Generated Sequences** | **240** | High-quality synthetic proteins with domain-specific conditioning |
+| **Sequence Identity** | **37-49%** | Range of similarity to real sequences (BLAST validation) |
+| **Training Epochs** | **300** | Diffusion model training with early stopping |
+| **Batch Size** | **32** | Optimized for training stability |
+| **Learning Rate** | **1e-4** | Adam optimizer configuration |
+| **Timesteps** | **1000** | Diffusion process steps for smooth noise scheduling |
+| **Embedding Dimension** | **1280** | ESM-2 latent space size |
+| **Data Split** | **80/10/10** | Train/validation/test ratio with stratified sampling |
+
+---
+
 ## 📝 Citation
 
 If you use EmbedDiff-ESM2 in your research, please cite:
@@ -304,9 +319,8 @@ If you use EmbedDiff-ESM2 in your research, please cite:
 ```bibtex
 @article{embeddiff_esm2_2024,
   title={EmbedDiff-ESM2: Latent Diffusion for Protein Sequence Generation},
-  author={Your Name},
-  journal={Journal Name},
-  year={2024}
+  author={Melaku Garsamo},
+  year={2025}
 }
 
 ---
