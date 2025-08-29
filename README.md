@@ -1,6 +1,23 @@
-# 🧬 EmbedDiff-ESM2: Latent Diffusion for Protein Sequence Generation
+<!--
+EmbedDiff is a deep learning pipeline for de novo protein design using latent diffusion models and ESM2 embeddings. It generates novel, biologically plausible protein sequences and includes decoding, BLAST validation, entropy filtering, and structure prediction using ESMFold or AlphaFold2. Ideal for machine learning in bioinformatics, protein engineering, and generative biology.
+-->
+# 🧬 EmbedDiff: Latent Diffusion Pipeline for De Novo Protein Sequence Generation
+
+[![HTML Report](https://img.shields.io/badge/View%20Report-📊-orange)](https://github.com/mgarsamo/EmbedDiff_ESM/blob/main/embeddiff_esm2_summary_report.html)
+[![Run EmbedDiff](https://img.shields.io/badge/🚀-Run%20Pipeline-blue)](#-quick-start-1-liner)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
 **EmbedDiff-ESM2** is a comprehensive protein sequence generation pipeline that combines large-scale pretrained protein embeddings (ESM-2) with a latent diffusion model to explore and sample from the vast protein sequence space. It generates novel sequences that preserve semantic and evolutionary properties without relying on explicit structural data, and evaluates them through a suite of biologically meaningful analyses including logistic regression classification.
+
+---
+
+## 🚀 Quick Start (1-liner)
+
+To run the entire EmbedDiff pipeline from end to end:
+
+```bash
+python run_embeddiff_pipeline.py
+```
 
 ---
 
@@ -43,7 +60,7 @@ The full EmbedDiff-ESM2 pipeline is modular and proceeds through the following s
 
 ---
 
-### **Step 3: Train EmbedDiff Latent Diffusion Model**
+### **Step 3: Train EmbedDiff-ESM2 Latent Diffusion Model**
 - A denoising MLP learns to reverse the process of adding Gaussian noise to real ESM-2 embeddings.
 - Trained using a sequence of time steps, the model gradually denoises noisy embeddings back toward the real manifold.
 - This enables sampling realistic embeddings from noise.
@@ -178,7 +195,7 @@ EmbedDiff_ESM/
 │   └── generate_esm2_report.py                # Step 8: Generate final HTML report
 │
 ├── models/                                      # 📁 ML model architectures
-│   ├── latent_diffusion.py                     # EmbedDiff diffusion model
+│   ├── latent_diffusion.py                     # EmbedDiff-ESM2 diffusion model
 │   └── decoder_transformer.py                  # Transformer decoder
 │
 ├── utils/                                       # 📁 Utility and helper functions
@@ -271,7 +288,6 @@ If you use EmbedDiff-ESM2 in your research, please cite:
   journal={Journal Name},
   year={2024}
 }
-```
 
 ---
 
