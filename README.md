@@ -1,7 +1,7 @@
 <!--
 EmbedDiff is a deep learning pipeline for de novo protein design using latent diffusion models and ESM2 embeddings. It generates novel, biologically plausible protein sequences and includes decoding, BLAST validation, entropy filtering, and structure prediction using ESMFold or AlphaFold2. Ideal for machine learning in bioinformatics, protein engineering, and generative biology.
 -->
-# 🧬 EmbedDiff: Latent Diffusion Pipeline for De Novo Protein Sequence Generation
+# 🧬 EmbedDiff-ESM: Latent Diffusion Pipeline for De Novo Protein Sequence Generation
 
 [![HTML Report](https://img.shields.io/badge/View%20Report-📊-orange)](https://github.com/mgarsamo/EmbedDiff_ESM/blob/main/embeddiff_esm2_summary_report.html)
 [![Run EmbedDiff](https://img.shields.io/badge/🚀-Run%20Pipeline-blue)](#-quick-start-1-liner)
@@ -61,9 +61,29 @@ The full EmbedDiff-ESM2 pipeline is modular and proceeds through the following s
 ---
 
 ### **Step 3: Train EmbedDiff-ESM2 Latent Diffusion Model**
-- A denoising MLP learns to reverse the process of adding Gaussian noise to real ESM-2 embeddings.
-- Trained using a sequence of time steps, the model gradually denoises noisy embeddings back toward the real manifold.
-- This enables sampling realistic embeddings from noise.
+
+**Architecture Details:**
+- **Noise Predictor**: Multi-layer perceptron (MLP) with **4 hidden layers** (1024→1024→512→1280)
+- **Input Dimension**: 1280 (ESM-2 embedding size) + conditional domain labels + timestep embedding
+- **Activation**: ReLU with LayerNorm and Dropout (0.2) for regularization
+- **Conditional Input**: Domain-specific labels (archaea, bacteria, fungi) as one-hot encoded vectors
+
+**Diffusion Process:**
+- **Timesteps**: **1000 diffusion steps** for smooth noise scheduling
+- **Noise Schedule**: **Cosine beta schedule** with improved stability (β ∈ [0.0001, 0.9999])
+- **Forward Process**: Gradual addition of Gaussian noise following q(xₜ|x₀) = √ᾱₜx₀ + √(1-ᾱₜ)ε
+- **Reverse Process**: Learned denoising using p_θ(xₜ₋₁|xₜ) with noise prediction
+
+**Training Configuration:**
+- **Batch Size**: 32 (optimized for stability)
+- **Learning Rate**: 1e-4 (Adam optimizer)
+- **Epochs**: 300 with early stopping
+- **Data Split**: 80/10/10 (train/val/test) with stratified sampling by domain
+- **Normalization**: ESM-2 embeddings scaled to [-1, 1] range using tanh scaling
+
+**Loss Function**: Mean squared error (MSE) between predicted and actual noise: L = ||ε - ε_θ(xₜ, t)||²
+
+This architecture enables the model to learn the complex distribution of protein embeddings and generate novel, biologically plausible latent representations through iterative denoising.
 
 ---
 
