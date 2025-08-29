@@ -5,7 +5,7 @@ EmbedDiff is a deep learning pipeline for de novo protein design using latent di
 
 [![HTML Report](https://img.shields.io/badge/View%20Report-📊-orange)](https://mgarsamo.github.io/EmbedDiff_ESM/embeddiff_esm2_summary_report.html)
 [![Run EmbedDiff](https://img.shields.io/badge/🚀-Run%20Pipeline-blue)](#-quick-start-1-liner)
-[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/mgarsamo/EmbedDiff_ESM/blob/main/LICENSE)
 
 **EmbedDiff-ESM2** is a comprehensive protein sequence generation pipeline that combines large-scale pretrained protein embeddings (ESM-2) with a latent diffusion model to explore and sample from the vast protein sequence space. It generates novel sequences that preserve semantic and evolutionary properties without relying on explicit structural data, and evaluates them through a suite of biologically meaningful analyses including logistic regression classification.
 
