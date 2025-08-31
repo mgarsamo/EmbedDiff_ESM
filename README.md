@@ -312,19 +312,6 @@ Generated sequences can be assessed for structural plausibility using:
 
 ---
 
-## 📝 Citation
-
-If you use EmbedDiff-ESM2 in your research, please cite:
-
-```bibtex
-@article{embeddiff_esm2_2024,
-  title={EmbedDiff-ESM2: Latent Diffusion for Protein Sequence Generation},
-  author={Melaku Garsamo},
-  year={2025}
-}
-
----
-
 ## 🤝 Contributing
 
 Contributions are welcome! Please feel free to submit issues, feature requests, or pull requests.
